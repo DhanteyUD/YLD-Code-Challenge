@@ -4,14 +4,12 @@
 
 ```
 YLD-Code-Challenge
-│   README.md
-│   index.js
+│ README.md
+│ index.js
 │
-└───Question
-│   │   YLD-1.png
-│   │   YLD-2.png
-│   │   YLD-3.png
-│
-│
+└ Question
+  │   YLD-1.png
+  │   YLD-2.png
+  │   YLD-3.png
 
 ```
