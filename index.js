@@ -1,12 +1,21 @@
 class Lazy {
-  add(fn, ...args) {
+  constructor() {
+    this.actions = [];
+  }
+  add(fn, ...input) {
+    if (input.length === 0) {
+      this.actions.push(fn);
+      return this;
+    }
+    this.actions.push((a) => fn(...input, a));
     return this;
   }
-
-  evaluate(value) {}
+  evaluate(target) {
+    const result = target.map((val) => {
+      return this.actions.reduce((acc, action) => {
+        return action(acc);
+      }, val);
+    });
+    return result;
+  }
 }
-
-const computation = new Lazy();
-
-computation.add(Math.sqrt);
-computation.evaluate([1, 2, 3, 3]);
